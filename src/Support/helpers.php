@@ -276,7 +276,11 @@ function searchModelField($model, array $params, array $whereField)
     if ($model instanceof \Illuminate\Database\Eloquent\Model || $model instanceof \Illuminate\Database\Eloquent\Builder) {
         foreach ($whereField as $item => $value) {
             $model = $model->when(isset($params[$item]), function ($query) use ($params, $item, $value) {
+                $value = strtolower($value);
                 switch ($value) {
+                    case 'like':
+                        $query->where($item, 'like', "%{$params[$item]}%");
+                        break;
                     case 'in':
                         if (is_array($params[$item])) {
                             $query->whereIn($item, $params[$item]);
@@ -291,10 +295,15 @@ function searchModelField($model, array $params, array $whereField)
                     case 'not_null':
                         $query->whereNotNull($item);
                         break;
+                    case 'between':
+                        if (is_array($params[$item])) {
+                            $query->whereBetween($item, $params[$item]);
+                        }
+                        break;
                     default:
                         if (is_array($params[$item])) {
                             $query->where($item, 'in', $params[$item]);
-                        } else if (is_string($params[$item]) && in_array($value, ['=', '!=', '>=', '<=', 'like'])) {
+                        } else if (in_array($value, ['=', '!=', '>=', '<='])) {
                             $query->where($item, $value, $params[$item]);
                         }
                 }
@@ -340,9 +349,5 @@ function searchModelDateRange($model, array $params, $field = 'created_at', $beg
  */
 function fullTableName(string $table): string
 {
-    $database = config('database');
-    if (isset($database['connections'][$database['default']]['prefix'])) {
-        return $database['connections'][$database['default']]['prefix'] . $table;
-    }
-    return $table;
+    return DB::getTablePrefix() . $table;
 }

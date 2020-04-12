@@ -3,13 +3,16 @@
 <p align="center"> 项目快速开发后台，采用前后端分离的方式，同时支持Laravel、Lumen 5.5LTS以上版本。</p>
 
 ## 说明
-可以配合由专用的后台UI使用（稍后上传，正在矫正中）。使用中可以多查看配置项`config/admin.php`，根据需求调整。
+可以配合由专用的后台UI([v-admin-ui](https://github.com/chujc/v-admin-ui))。使用中可以多查看配置项`config/admin.php`，根据需求调整。
 
 Laravel预览地址: (http://laravel.team.hanguosoft.com/admin)
 
 Lumen预览地址: (http://Lumen.team.hanguosoft.com/admin)
 
 账号: `admin` 密码：`123456`
+
+**强烈推荐**安装[v-admin-tools](https://github.com/chujc/v-admin-tools) 可以配合生成前后端代码
+  > composer require v-admin-tools
 
 ## 功能
 - [x] 管理员管理

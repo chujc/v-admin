@@ -12,8 +12,8 @@ class AdminRoleService
         'username' => 'like',
         'nickname' => 'like',
         'status' => '=',
-//        'beginTime' => '>=',
-//        'endTime' => '<=',
+        'beginTime' => null,
+        'endTime' => null,
     ];
 
     private $validateField = [

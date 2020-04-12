@@ -13,8 +13,8 @@ class AdminLoginLogService
         'username' => 'like',
         'ip' => 'like',
         'status' => '=',
-//        'beginTime' => '>=',
-//        'endTime' => '<=',
+        'beginTime' => null,
+        'endTime' => null,
     ];
 
     /**

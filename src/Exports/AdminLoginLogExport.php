@@ -54,7 +54,7 @@ class AdminLoginLogExport implements FromCollection, WithMapping, WithHeadings
             '错误信息',
             '操作系统',
             '浏览器',
-            'http_user_agent',
+            'User-Agent',
         ];
     }
 }

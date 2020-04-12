@@ -1,7 +1,7 @@
 {
     "name": "chujc/v-admin",
     "description": "Laravel or lumen admin api",
-    "version": "0.1",
+    "version": "0.2",
     "keywords": [
         "laravel",
         "lumen",

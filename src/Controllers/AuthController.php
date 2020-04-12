@@ -49,13 +49,12 @@ class AuthController
                 return $item;
             }
         })->toArray(), 'menu_id');
-        Admin::user()->route = $routeTree;
-        Admin::user()->permission = $adminMenu->filter(function ($item) {
+        Admin::user()->routes = $routeTree;
+        Admin::user()->permissions = $adminMenu->filter(function ($item) {
             if ($item && $item->permission) {
                 return $item;
             }
         })->pluck('permission');
-
 
         return Result::data(Admin::user());
     }

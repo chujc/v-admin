@@ -35,11 +35,11 @@ class AdminMenus extends Migration
             $table->integer('order')->nullable()->default(0)->comment('显示顺序');
             $table->string('path', 200)->nullable()->default('')->comment('路由地址');
             $table->string('component', 255)->nullable()->default(null)->comment('组件路径');
-            $table->boolean('is_link')->nullable()->default(1)->comment('是否为外链（1是 0否）');
+            $table->boolean('is_link')->nullable()->default(0)->comment('是否为外链（1是 0否）');
             $table->boolean('menu_type')->nullable()->default(1)->comment('菜单类型（1菜单 2按钮）');
-            $table->boolean('is_visible')->nullable()->default(0)->comment('菜单状态（1显示 0隐藏）');
+            $table->boolean('is_visible')->nullable()->default(1)->comment('菜单状态（1显示 0隐藏）');
             $table->string('permission', 100)->nullable()->default(null)->comment('权限标识');
-            $table->string('icon', 100)->nullable()->default('#')->comment('菜单图标');
+            $table->string('icon', 100)->nullable()->default('')->comment('菜单图标');
             $table->string('remark', 500)->nullable()->default('')->comment('备注');
             $table->unsignedBigInteger('created_by')->nullable()->default(0)->comment('创建者');
             $table->datetime('created_at')->nullable()->default(null)->comment('创建时间');

@@ -12,8 +12,8 @@ class AdminConfigService
         'config_name' => 'like',
         'config_key' => 'like',
         'is_system' => '=',
-//        'beginTime' => '>=',
-//        'endTime' => '<=',
+        'beginTime' => null,
+        'endTime' => null,
     ];
 
     private $validateField = [

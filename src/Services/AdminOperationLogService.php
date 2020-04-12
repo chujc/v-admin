@@ -15,8 +15,8 @@ class AdminOperationLogService
         'ip' => 'like',
         'status' => '=',
         'method' => '=',
-//        'beginTime' => '>=',
-//        'endTime' => '<=',
+        'beginTime' => null,
+        'endTime' => null,
     ];
 
     /**

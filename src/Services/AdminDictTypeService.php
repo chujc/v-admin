@@ -13,8 +13,8 @@ class AdminDictTypeService
         'dict_name' => 'like',
         'dict_type' => 'like',
         'status' => '=',
-//        'beginTime' => '>=',
-//        'endTime' => '<=',
+        'beginTime' => null,
+        'endTime' => null,
     ];
 
     private $validateField = [

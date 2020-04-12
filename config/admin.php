@@ -196,11 +196,9 @@ return [
          */
         'except' => [
             'api/admin/logs*',
-//            'api/admin/dict/data/type*',
-//            'api/admin/auth/user'
         ],
     ],
-
+    // 后续规划扩展配置
     'extensions' => [
         'tools' => [
 
